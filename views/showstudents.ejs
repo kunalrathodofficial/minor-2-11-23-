@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Students</title>
+    <style>
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <form method="post" action="/showstudents/branch">
+    Branch: <select name="branch" aria-placeholder="Choose your Branch">
+        <option value="CS">CS</option>
+        <option value="IT">IT</option>
+        <option value="EC">EC</option>
+        <option value="CS-AIML">CS-AIML</option>
+        <option value="CSIT">CSIT</option>
+    </select>
+    <button type="submit">Apply</button>
+</form>
+<form method="post" action="/showstudents/certificate">
+    Certification: <select name="certificate" >
+        <option value="Nptel DBMS">Nptel DBMS</option>
+        <option value="AWS">AWS</option>
+        <option value="Nptel Cyber Security">Nptel Cyber Security</option>
+        <option value="Nptel Programming in Java">Nptel Programming in Java</option>
+        
+    </select>
+    <button type="submit">Apply</button>
+</form>
+
+<form method="post" action="/showstudents/cgpa">
+    CGPA(Greater than given value): <select name="cgpa" >
+        <option value=7>7</option>
+        <option value=7.5>7.5</option>
+        <option value=8>8</option>
+        <option value=8.5>8.5</option>
+        
+    </select>
+    <button type="submit">Apply</button>
+</form>
+
+<form method="post" action="/showstudents/sports">
+    Sports:<select name="sports" >
+        <option value="Cricket">Cricket</option>
+        <option value="Kho-Kho">Kho-Kho</option>
+        <option value="Football">Football</option>
+        <option value="Volleyball">Volleyball</option>
+        
+    </select>
+    <button type="submit">Apply</button>
+</form>
+
+    <h2 style="display: flex; align-content: center;"> Students Details</h2>
+    <table>
+      <tr>
+        <th>name</th>
+        <th>enrollNo</th>
+        <th>email</th>
+        <th>branch</th>
+        <th>section</th>
+        <th>year</th>
+        <th>sem</th>
+        <th>mobileNo</th>
+        <th>gender</th>
+        <th>tenthschool</th>
+        <th>tenthmarks</th>
+        <th>tenthyear</th>
+        <th>twelthschool</th>
+        <th>twelthmarks</th>
+        <th>twelthyear</th>
+        <th>cgpa</th>
+        <th>cultural</th>
+        <th>technical</th>
+        <th>sports</th>
+        <th>title1</th>
+        <th>description1</th>
+        <th>title2</th>
+        <th>description2</th>
+        <th>designation1</th>
+        <th>companyname1</th>
+        <th>startdate</th>
+        <th>designation2</th>
+        <th>companyname2</th>
+        <th>startdate2</th>
+        <th>certificate1</th>
+        <th>certificate2</th>
+        <th>github</th>
+        <th>linkedin</th>
+      </tr>
+
+      <% for(user of users){ %>
+        <tr>
+      
+          <td><%= user.enrollNo%></td>
+          <td><%= user.name%></td>
+          <td><%= user.email%></td>
+          <td><%= user.branch%></td>
+          <td><%= user.section%></td>
+          <td><%= user.year%></td>
+          <td><%= user.sem%></td>
+          <td><%= user.mobileNo%></td>
+          <td><%= user.gender%></td>
+          <td><%= user.tenthschool%></td>
+          <td><%= user.tenthmarks%></td>
+          <td><%= user.tenthyear%></td>
+          <td><%= user.twelthschool%></td>
+          <td><%= user.twelthmarks%></td>
+          <td><%= user.twelthyear%></td>
+          <td><%= user.cgpa%></td>
+          <td><%= user.cultural%></td>
+          <td><%= user.technical%></td>
+          <td><%= user.sports%></td>
+          <td><%= user.title1%></td>
+          <td><%= user.description1%></td>
+          <td><%= user.title2%></td>
+          <td><%= user.description2%></td>
+          <td><%= user.designation1%></td>
+          <td><%= user.companyname1%></td>
+          <td><%= user.startdate%></td>
+          <td><%= user.designation2%></td>
+          <td><%= user.companyname2%></td>
+          <td><%= user.startdate2%></td>
+          <td><%= user.certificate1%></td>
+          <td><%= user.certificate2%></td>
+          <td><%= user.github%></td>
+          <td><%= user.linkedin%></td>
+          
+        </tr>
+        <%}%>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume </title>
+</head>
+<body>
+    <h2>This is the resume page</h2>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= user[0] %>'s Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .contact {
+            font-size: 16px;
+        }
+        .section {
+            margin-top: 20px;
+        }
+        .section-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .section-content {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name"><%= user[0] %></div>
+        <div class="contact">
+            <%= user[3] %>, <%= user[4] %>, <%= user[5] %> year
+            | Email: <%= user[2] %>
+            | Mobile: <%= user[7] %>
+            | Gender: <%= user[8] %>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="section-content">
+            <div><%= user[15] %> CGPA</div>
+            <div><%= user[3] %></div>
+            <div><%= user[5] %> - Semester <br><%= user[6]%> - year</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">10th Grade</div>
+        <div class="section-content">
+            <div><%= user[9] %></div>
+            <div><%= user[10] %> Marks</div>
+            <div>Year: <%= user[11] %></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">12th Grade</div>
+        <div class="section-content">
+            <div><%= user[12] %></div>
+            <div><%= user[13] %> Marks</div>
+            <div>Year: <%= user[14] %></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Extra-curricular & Technical Skills</div>
+        <div class="section-content">
+            <ul>
+                <li>Cultural: <%= user[16] %></li>
+                <li>Technical: <%= user[17]%></li>
+                <li>Sports: <%= user[18] %></li>
+            </ul>
+        </div>
+    </div>
+
+    
+    <div class="section">
+        <div class="section-title">Projects</div>
+        <div class="section-content">
+            <div><%= user[23] %></div>
+            <div><%= user[24] %></div>
+            <div><%= user[25] %></div>
+            
+        </div>
+        <div class="section-content">
+            <div><%= user[26] %></div>
+            <div><%= user[27]%></div>
+            <div><%= user[28] %></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Certificates</div>
+        <div class="section-content">
+            <div><%= user[29] %></div>
+            <div><%= user[30] %></div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Social Media</div>
+        <div class="section-content">
+            <div>Github: <a href="<%= user.github %>"><%= user[31] %></a></div>
+            <div>LinkedIn: <a href="<%= user.linkedin %>"><%= user[32] %></a></div>
+        </div>
+    </div>
+
+    <br><br>
+    <button onclick="window.print()">Print Resume</button>
+</body>
+</html>
