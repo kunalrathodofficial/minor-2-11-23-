@@ -10,7 +10,6 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname,"views"));
-app.use(express.static(path.join(__dirname,"public")));
 
 const connection =mysql.createConnection({
     host:"localhost",
@@ -127,8 +126,32 @@ app.get("/facultylogin",(req,res) =>{
 
 
  app.get("/login/profile/adddetails",(req,res)=>{
+   console.log(req.query);
+   let name= req.query.name;
+   let enrollNo=req.query.enrollNo;
    
-   res.render("detail.ejs");
+   let q3 =`select * from details where enrollNo='${enrollNo}'`;
+
+   try{
+      connection.query(q3, (err, result) =>{
+         if(err) throw err;
+         console.log(result);
+         let user = result[0];
+         if(result.length!==0){
+           
+        res.render("displayOldDetails.ejs",{user});
+      }
+        else{
+         res.render("detail.ejs");
+        }
+      
+      });
+   }
+   catch(err){
+      console.log(err);
+      res.send(`Some err in DB`);
+   }
+   
  });
 
  

@@ -9,7 +9,8 @@
     <h2>This is the profile page</h2>
      <h3>Name: <%= user.name %></h3>
      <h3>EnrollNo: <%= user.enrollNo %></h3>
-     <a href="http://localhost:8080/login/profile/adddetails">Add Details</a>
+     <a href="http://localhost:8080/login/profile/adddetails?name=<%= user.name %>&enrollNo=<%= user.enrollNo%>">Add/Update Details</a>
+     
    
 </body>
 </html>
