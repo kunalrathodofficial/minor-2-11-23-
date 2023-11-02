@@ -65,13 +65,17 @@ app.get("/facultylogin",(req,res) =>{
           if(err) throw err;
           console.log(result);
           let user = result[0];
-          if(enteredpassword != user.password ){
+         if(result.length!==0){
+         if(enteredpassword != user.password ){
           res.send("WRONG PASSWORD or ENROLLMENT NO.");
          }
       else{
             let user = result[0];
              res.render("profile.ejs",{user});
           
+         }}
+         else{
+            res.send("Please enter a valid ENROLLMENT NO./PASSWORD");
          }
        
        });
@@ -96,6 +100,7 @@ app.get("/facultylogin",(req,res) =>{
           if(err) throw err;
           console.log(result);
           let user = result[0];
+          if(result.length!==0){
           if(enteredpassword != user.password){
           res.send("WRONG PASSWORD");
          }
@@ -105,6 +110,9 @@ app.get("/facultylogin",(req,res) =>{
             res.redirect("/facultylogin/showstudents");
             console.log("Faculty Logged in succesfully");
           
+         }}
+         else{
+            res.send("Please enter a valid FACULTY_ID/PASSWORD");
          }
        
        });
@@ -118,6 +126,7 @@ app.get("/facultylogin",(req,res) =>{
 
 
  app.get("/login/profile/adddetails",(req,res)=>{
+   
    res.render("detail.ejs");
  });
 
