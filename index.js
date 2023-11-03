@@ -10,6 +10,10 @@ app.use(methodOverride("_method"));
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname,"views"));
+app.use(express.urlencoded({exteneded: true}));
+// app.use(express.static(path.join(__dirname,"public")));
+app.use(express.static(path.join(__dirname,"components")));
+app.use(express.static(path.join(__dirname,"C:\Users\Kunal Rathod\OneDrive\Desktop\minor\components\img\signin-image.jpg")));
 
 const connection =mysql.createConnection({
     host:"localhost",
@@ -304,6 +308,7 @@ app.post("/showstudents/sports", (req, res)=>{
          twelthschool, twelthmarks, twelthyear, cgpa , cultural, technical, sports, title1, description1, title2, description2, 
          designation1, companyname1, startdate, designation2, companyname2, startdate2, certificate1, certificate2, github, linkedin];
          console.log(user);
+         // res.redirect("http://localhost:8080/login/profile/adddetails/chooseTemplate",{user});
         res.render("resume.ejs",{user});
        
        });

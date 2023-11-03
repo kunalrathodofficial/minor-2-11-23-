@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,5 +12,26 @@
      <a href="http://localhost:8080/login/profile/adddetails?name=<%= user.name %>&enrollNo=<%= user.enrollNo%>">Add/Update Details</a>
      
    
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/profile.css">
+    <title>Profile Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="cover-photo">
+          <img src="/img/user.png" class="profile">
+        </div>
+        <div class="profile-name"><%= user.name %></div>
+        <div class="profile-name"><%= user.enrollNo %></div>
+        <p class="about">View Your Student Profile</p>
+        <button class="msg-btn"><a href="http://localhost:8080/login/profile/adddetails?name=<%= user.name %>&enrollNo=<%= user.enrollNo%>">Add/Update Details</a></button>
+      </div>
 </body>
 </html>
